@@ -3,7 +3,18 @@ pipeline {
   stages {
     stage('print msg') {
       steps {
-        echo 'hello'
+        parallel(
+          "print msg": {
+            echo 'hello'
+            
+          },
+          "run a bash": {
+            sh '''pwd
+ls
+'''
+            
+          }
+        )
       }
     }
   }
