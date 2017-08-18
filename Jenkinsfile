@@ -11,7 +11,9 @@ pipeline {
           "run a bash": {
             sh '''pwd
 ls
-'''
+whoami
+
+sh ./hello.sh'''
             
           }
         )
